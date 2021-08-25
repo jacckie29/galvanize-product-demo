@@ -1,0 +1,49 @@
+{
+  "name": "galvanize-product-demo",
+  "version": "1.0.0",
+  "description": "A sample app to demonstrate API with SQL Database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "init-test": "jest --init",
+    "ip": "rm -rf node_modules && npm install",
+    "dev-serve": "node_modules/.bin/nodemon src/server.js",
+    "lint": "node_modules/.bin/eslint --ignore-pattern '!.eslintrc.js' . --fix",
+    "prod-serve": "pm2 start src/server.js -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/janak29/galvanize-product-demo.git"
+  },
+  "keywords": [
+    "API",
+    "SQL",
+    "Product Management",
+    "Node"
+  ],
+  "author": "Janak Mer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/janak29/galvanize-product-demo/issues"
+  },
+  "homepage": "https://gitlab.com/janak29/galvanize-product-demo#README",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.1",
+    "knex": "^0.95.10",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.7.1"
+  }
+}

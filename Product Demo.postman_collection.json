@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "a10d18a6-d944-406c-819c-2c685412d470",
+		"name": "Product Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Computer",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "35000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "this is a brand new computer",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Product Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Computer",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "35000",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is a brand new computer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9b-fdyKayqCVNpxgsj6JN6J8UTOyFc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:12:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"price\": \"35000.00\",\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 0\n        }\n    ]\n}"
+				},
+				{
+					"name": "Add Product Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Computer",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "35000",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "this is a brand new computer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-a2iqxKpxZqoI5Je6zcBhNreAfZ8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:13:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": {\n        \"name\": [\n            \"Please enter a valid Name\"\n        ],\n        \"price\": [\n            \"Please enter a valid Price\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "View Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "productId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "USD",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/fetch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"fetch"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"fetch"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7-wjZKp9woAbBAsDwT3BYi4UKHvZI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:14:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"price\": 35000,\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 1,\n            \"currency\": \"INR\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "View Product with Currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "USD",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/fetch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"fetch"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-gkOjxh0MCnHq8N1RUiLCvVWkwmk\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:14:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"price\": 472.045,\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 2,\n            \"currency\": \"USD\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "productId",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Product",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-Fik3/PEJg2kWz54gSMx7X3rRXWY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:16:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"price\": \"35000.00\",\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"inactive\",\n            \"views\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "All Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "limit",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "USD",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/fetch-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"fetch-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Products",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"fetch-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "532"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"214-djfQtpx3B7k1QLZQTKo4TQ639Bg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:17:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 1,\n            \"name\": \"jaank\",\n            \"description\": null,\n            \"status\": \"active\",\n            \"views\": 33,\n            \"price\": \"16.00\",\n            \"currency\": \"INR\"\n        },\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 2,\n            \"price\": \"35000.00\",\n            \"currency\": \"INR\"\n        },\n        {\n            \"product_id\": 2,\n            \"name\": \"jaank\",\n            \"description\": null,\n            \"status\": \"active\",\n            \"views\": 0,\n            \"price\": \"200.00\",\n            \"currency\": \"INR\"\n        },\n        {\n            \"product_id\": 3,\n            \"name\": \"jaank\",\n            \"description\": \"THis is test description\",\n            \"status\": \"active\",\n            \"views\": 0,\n            \"price\": \"16.00\",\n            \"currency\": \"INR\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "All Products with limit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "limit",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"fetch-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11d-RRBqCDmlfwt2GUDz7ef+zELNHH4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:18:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 1,\n            \"name\": \"jaank\",\n            \"description\": null,\n            \"status\": \"active\",\n            \"views\": 33,\n            \"price\": \"16.00\",\n            \"currency\": \"INR\"\n        },\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 2,\n            \"price\": \"35000.00\",\n            \"currency\": \"INR\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "All Products with limit and currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "limit",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "USD",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/fetch-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"fetch-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"126-Fb9pvIFh60g1g5JVhct9xrcyG4M\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 24 Aug 2021 22:18:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"succes\",\n    \"data\": [\n        {\n            \"product_id\": 1,\n            \"name\": \"jaank\",\n            \"description\": null,\n            \"status\": \"active\",\n            \"views\": 33,\n            \"price\": \"0.21579200\",\n            \"currency\": \"USD\"\n        },\n        {\n            \"product_id\": 4,\n            \"name\": \"Computer\",\n            \"description\": \"this is a brand new computer\",\n            \"status\": \"active\",\n            \"views\": 2,\n            \"price\": \"472.04500000\",\n            \"currency\": \"USD\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
